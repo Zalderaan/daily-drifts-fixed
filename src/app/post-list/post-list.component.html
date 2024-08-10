@@ -1,0 +1,63 @@
+<div class="post-list whole-screen container-fluid">
+    <div class="container">
+        <div class="row mt-2 d-flex">
+            <div class="search-container d-flex align-items-center justify-content-between">
+                
+                <!-- <h1>testing</h1> -->
+            </div>
+        </div>
+
+        <div class="row bordered my-2">
+            <div class="others-drifts col-8">
+                <h1>Catch others' drifts</h1>
+
+                <div class="blogs-container bordered">
+                    <div class="blog bordered" *ngFor="let blog of blogs">
+                        <mat-card class="blog-card p-2 bg-dark">
+                            <mat-card-header class="blog-header-cont">
+                                <mat-card-title class="blog-title-cont" [innerHTML]="shortenTitle(blog.blog_title)"></mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content class="allBlogBody-holder"
+                                [innerHTML]="getSummary(blog.blog_body)">
+                            </mat-card-content>
+                            
+                            <mat-card-content class="allOther-contents">
+
+                            </mat-card-content>
+
+                            <mat-card-footer class="footer-content">
+
+                                <small class="author">
+                                    {{blog.author_user_username}}
+                                    <span class="you" *ngIf="blog.author_user_id === currentUserId">(You)</span>
+                                    | {{blog.author_posts_created_at | date: 'medium'}} |
+                                    <span class="views"> {{blog.blog_views}} view/s</span>
+                                </small>
+
+                                <div class="btn-cont">
+                                    <button class="readMore-btn" mat-button (click)="readMore(blog.blog_id)"><small>Read</small></button>
+                                </div>
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <h1>Things to do</h1>
+                
+                <div class="bordered actions-cont mt-4">
+                    <div class="search-container">
+                        <mat-form-field class="col-9 me-2">
+                            <input type="text" [(ngModel)]="search" matInput placeholder="Search blogs...">
+                        </mat-form-field>
+                        <button mat-button (click)="onSearch()">Search</button>
+                    </div>
+
+                    <a class="addPost-btn bg-dark col-12" mat-button appearance="outlined" routerLink="/create-blog"> + POST</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

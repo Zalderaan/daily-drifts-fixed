@@ -1,0 +1,24 @@
+<div class="whole-screen container-fluid login-form-cont">
+    <div class="container">
+        <div class="row row1">
+            <h2 class="text-center mt-4">ZDEV BLOG</h2>
+            <mat-card class="loginCard mt-2 mb-5 p-4 text-center">
+                <mat-card-content>
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <!-- Correct Example -->
+                        <mat-form-field class="col-12">
+                            <input matInput id="email" name="email" formControlName="email" placeholder="Email" type="email" required>
+                        </mat-form-field>
+    
+                        <mat-form-field class="col-12">
+                            <input matInput id="password" name="password" formControlName="password" placeholder="Password" type="password" required>
+                        </mat-form-field>
+    
+                        <button mat-raised-button type="submit" class="login-btn bg-dark col-7 my-3">Login</button>
+                        <a mat-raised-button color="primary" class="sg-up-btn col-7" routerLink="/register">Sign Up</a>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

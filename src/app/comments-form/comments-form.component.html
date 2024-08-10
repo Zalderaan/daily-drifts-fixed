@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-12">
+                <form [formGroup]="commentForm" (ngSubmit)="onComment()">
+                    <mat-card class="hollow">
+                        <mat-card-content *ngIf="currentUserId != null; else loginPrompt">
+                            <quill-editor formControlName="comment_body" class="comment-form" 
+                                    [modules]="quillConfig.modules" [placeholder]="placeholder"></quill-editor>
+                        </mat-card-content>
+
+                        <ng-template #loginPrompt>
+                            <mat-card-content>
+                                <quill-editor formControlName="comment_body" class="comment-form" 
+                                [modules]="quillConfig.modules" [placeholder]="guestPlaceholder" [readOnly]="!currentUserId"></quill-editor>
+                            </mat-card-content>
+                        </ng-template>
+    
+                        <mat-card-footer class="d-flex justify-content-end">
+                            <button class="mb-2 me-2 comment-btn" mat-button type="submit" [disabled]="!currentUserId">
+                                <small>Add Comment</small>
+                            </button>
+                        </mat-card-footer>
+                    </mat-card>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

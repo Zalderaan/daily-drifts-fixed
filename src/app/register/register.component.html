@@ -1,0 +1,30 @@
+<div class="container-fluid reg-form-cont">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mt-4">Register</h2>
+
+            <mat-card class="p-4 mb-5 text-center">
+                <mat-card-content>
+                    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                        
+                        <mat-form-field class="col-12">
+                            <input matInput id="email" name="email" formControlName="email" placeholder="Email" type="email" required>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-12">
+                            <input matInput id="username" name="username" formControlName="username" placeholder="Username" type="text" required>
+                        </mat-form-field> 
+
+                        <mat-form-field class="col-12">
+                            <input matInput id="password" name="password" formControlName="password" placeholder="Password" type="password" required>
+                        </mat-form-field>
+
+                        <button mat-raised-button type="submit" class="reg-btn col-12 my-3">Register</button>
+                        <a mat-raised-button class="login-btn  col-12" routerLink="/login">Login</a>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

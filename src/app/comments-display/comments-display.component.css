@@ -1,0 +1,30 @@
+.commentor{
+    font-size: 12px;
+    color: #b7adad;
+    /* margin-left: 15px; */
+}
+
+.you {
+    font-size: 12px;
+    color: #d146de;
+}
+
+.author {
+    font-size: 12px;
+    color: #ffb936;
+    /* margin-left: 15px; */
+}
+
+.comment-body {
+    font-size: 18px;
+}
+
+.delC-btn{
+    /* background-color: #9c1d1ba0; */
+    color: red;
+}
+
+.delC-btn:hover{
+    background-color: #9c1d1b;
+    color: white;
+}

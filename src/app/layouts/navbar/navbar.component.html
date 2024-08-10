@@ -1,0 +1,12 @@
+<mat-toolbar class="navbar bg-dark">
+    <span class="px-2">DAILY DRIFTS</span>
+
+    <div class="nav-items">
+        <!-- <a class="nav-link" mat-button routerLink="/">Home</a> -->
+        <!-- <a class="nav-link" mat-button routerLink="/about">About</a> -->
+        <!-- <a class="nav-link" mat-button routerLink="/contact">Contact</a> -->
+        <a class="nav-link" mat-button routerLink="/blogs">Blogs</a>
+        <a *ngIf="!(isLoggedIn$ | async)" class="nav-link" mat-button routerLink="/login">Login</a>
+        <a *ngIf="isLoggedIn$ | async" class="nav-link" mat-button routerLink="/login" (click)="onLogout()">Logout</a>
+    </div>    
+</mat-toolbar>

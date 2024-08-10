@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.borderedd {
+    border: 2px solid rgb(13, 0, 255);
+    /* padding: 10px; */
+    /* margin: 10px; */
+}
+
+.whole-screen {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.ql-editor.ql-blank::before {
+    color: rgb(109, 109, 109);
+    /* Change this to your desired color */
+    font-style: italic;
+    /* Optional: Add any additional styles you want */
+    /* font-size: 24px; */
+    /* opacity: 0.6; */
+    /* Optional: Adjust the opacity if needed */
+    content: attr(data-placeholder);
+    /* Ensure the placeholder text is displayed */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: "Roboto Mono", sans-serif; } */

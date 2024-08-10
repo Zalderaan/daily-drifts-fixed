@@ -1,0 +1,27 @@
+mat-card {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.reg-btn {
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+
+.login-btn {
+    background-color: #f6f6f6;
+    border: 1px solid #c9c9c9;
+}
+
+.small-input input {
+    font-size: 12px;
+    /* Adjust the font size as needed */
+}
+
+.small-input mat-form-field {
+    font-size: 12px;
+    /* This might be necessary to adjust the size of the placeholder text and other elements */
+}
