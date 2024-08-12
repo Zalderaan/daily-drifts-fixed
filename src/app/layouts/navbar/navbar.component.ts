@@ -7,23 +7,37 @@ import { Pipe } from '@angular/core';
 import { AuthFService } from '../../services/auth-f.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../../login-dialog/login-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatToolbarModule, RouterModule, CommonModule],
+  imports: [MatButtonModule, MatIconModule, MatToolbarModule, LoginDialogComponent, RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private authFService: AuthFService) { 
+  constructor(private authFService: AuthFService, private dialog: MatDialog, private router: Router) { 
     this.isLoggedIn$ = this.authFService.isLoggedIn$;
   }
 
 
   onLogout(): void {
+
     this.authFService.logout();
+    
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      disableClose: true,
+      // data: { message: 'Logging out' }
+    });
+
+    setTimeout(() => {
+      dialogRef.close();
+      this.router.navigate(['/login']);
+    }, 2000);
   }
 }
