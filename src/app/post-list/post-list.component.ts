@@ -83,12 +83,39 @@ export class PostListComponent implements OnInit {
   // }
 
   getSummary(blog_body: string): string{
-    const maxLength = 140; //maximum length of string detail
+    const maxLength = 250; //maximum length of string detail
     if (blog_body.length > maxLength) {
       return blog_body.substring(0, maxLength) + '...';
     }
 
     return blog_body;
+  }
+
+  generateSummary(blog_body: string, maxLength: number): string {
+    // 1. Create a temporary <div> element
+    const tempDiv = document.createElement('div');
+    
+    // 2. Set the innerHTML of the temporary <div> to the blog content (which may include HTML)
+    tempDiv.innerHTML = blog_body;
+    
+    // 3. Remove all <img> tags from the content
+    const images = tempDiv.getElementsByTagName('img');
+    while (images.length > 0) {
+      images[0].parentNode?.removeChild(images[0]);
+    }
+  
+    // 4. Get the innerHTML after removing <img> tags
+    const cleanedHTML = tempDiv.innerHTML;
+  
+    // 5. Truncate the text content to the specified maxLength, keeping the HTML tags
+    const textContent = tempDiv.textContent || tempDiv.innerText || '';
+    const truncatedText = textContent.length > maxLength ? textContent.slice(0, maxLength) + '...' : textContent;
+  
+    // 6. Replace the original text content with the truncated one while keeping the structure
+    tempDiv.innerHTML = cleanedHTML;
+    tempDiv.innerText = truncatedText;
+  
+    return tempDiv.innerHTML;
   }
 
   shortenTitle(blog_title: string): string {

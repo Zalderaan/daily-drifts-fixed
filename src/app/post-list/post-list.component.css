@@ -36,6 +36,26 @@
     color: white;
 }
 
+.img-content {
+    height: 150px;
+    width: 200px;
+
+    border: #8b8b8b52 solid 1px;
+    border-radius: 16px;
+    /* padding: 5px; */
+}
+
+.image-container{
+    /* height: 20px;
+    width: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* border-radius: 10px; */
+}
+
 /* .delete-btn{
     color: red;
 }

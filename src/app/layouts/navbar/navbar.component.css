@@ -1,3 +1,9 @@
+.dd-logo {
+    height: 30px;
+    width: 30px;
+    border-radius: 12px;
+}
+
 .navbar {
     /* spacing */
     display: flex;

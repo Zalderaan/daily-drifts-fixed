@@ -17,8 +17,8 @@ export const routes: Routes = [
     //default route
     {path: '', redirectTo: 'blogs', pathMatch: 'full'},
 
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
+    // {path: 'home', component: HomeComponent},
+    // {path: 'about', component: AboutComponent},
     {path: 'blogs', component: PostListComponent},
     {path: 'blogs/:id', component: PostDetailedComponent},
     {path: 'login', component: LoginComponent},
