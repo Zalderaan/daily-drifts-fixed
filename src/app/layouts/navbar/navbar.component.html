@@ -10,6 +10,6 @@
         <!-- <a class="nav-link" mat-button routerLink="/contact">Contact</a> -->
         <a class="nav-link" mat-button routerLink="/blogs">Blogs</a>
         <a *ngIf="!(isLoggedIn$ | async)" class="nav-link" mat-button routerLink="/login">Login</a>
-        <a *ngIf="isLoggedIn$ | async" class="nav-link" mat-button routerLink="/login" (click)="onLogout()">Logout</a>
+        <a *ngIf="isLoggedIn$ | async" class="nav-link" mat-button (click)="onLogout()">Logout</a>
     </div>    
 </mat-toolbar>

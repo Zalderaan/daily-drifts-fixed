@@ -87,7 +87,7 @@ export class PostDetailedComponent implements OnInit{
     setTimeout(() => {
       dialogRef.close();
       this.router.navigate(['/blogs']);
-    }, 2000);
+    }, 1000);
     
   }
 }

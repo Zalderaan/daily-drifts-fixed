@@ -5,7 +5,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-delete-load-dialog',
   standalone: true,
-  imports: [MatProgressSpinnerModule],
+  imports: [MatProgressSpinnerModule, MatDialogModule],
   templateUrl: './delete-load-dialog.component.html',
   styleUrl: './delete-load-dialog.component.css'
 })
