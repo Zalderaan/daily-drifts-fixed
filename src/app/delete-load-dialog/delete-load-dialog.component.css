@@ -1,0 +1,14 @@
+.dialog-styles {
+    width: 400px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    margin-top: 20px;
+    margin-bottom: 1rem;
+}
